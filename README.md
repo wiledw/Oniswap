@@ -1,5 +1,9 @@
 # Oniswap
 
+Demo: https://drive.google.com/file/d/17s2WLCbmhP7QQ0JMdvCDkJOdwza5ZJFW/view?usp=sharing
+
+Make sure to also look at my solidity repo to deploy the DEX smart contract: https://github.com/wiledw/67dex
+
 A decentralized exchange (DEX) built with Next.js and Thirdweb that enables seamless swapping between Ethereum (ETH) and a custom ERC-20 token. Oniswap implements an Automated Market Maker (AMM) model similar to Uniswap, providing real-time price calculations and secure on-chain swaps.
 
 ## Features
