@@ -1,0 +1,674 @@
+.main {
+  min-height: calc(100vh - 80px);
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    /* Blockchain node pattern */
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+  background-size: 600px 600px, 800px 800px, 1000px 1000px;
+  background-position: 0 0, 200px 200px, -100px -100px;
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+  animation: nodeMove 20s ease-in-out infinite, pulse 15s ease-in-out infinite;
+}
+
+.main::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    /* Hexagonal pattern overlay */
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.02) 2px,
+      rgba(255, 255, 255, 0.02) 4px
+    ),
+    repeating-linear-gradient(
+      60deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.02) 2px,
+      rgba(255, 255, 255, 0.02) 4px
+    ),
+    repeating-linear-gradient(
+      120deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.02) 2px,
+      rgba(255, 255, 255, 0.02) 4px
+    );
+  background-size: 100% 100%, 100% 100%, 100% 100%;
+  opacity: 0.4;
+  z-index: 0;
+  pointer-events: none;
+  animation: hexMove 35s linear infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes nodeMove {
+  0% {
+    background-position: 0 0, 200px 200px, -100px -100px;
+  }
+  50% {
+    background-position: 50px 50px, 250px 250px, -50px -50px;
+  }
+  100% {
+    background-position: 0 0, 200px 200px, -100px -100px;
+  }
+}
+
+@keyframes hexMove {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(30px, 30px) rotate(180deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 650px;
+  padding: 0 1rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 200px);
+  position: relative;
+  z-index: 1;
+}
+
+.gradientText0 {
+  background: -webkit-linear-gradient(#bfa3da, #84309c, #c735b0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradientText1 {
+  background: -webkit-linear-gradient(#a79af9, #7aa8d2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradientText2 {
+  background: -webkit-linear-gradient(#bfa3da, #743f93);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradientText3 {
+  background: -webkit-linear-gradient(#c35ab1, #e9a8d9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title a:hover,
+.title a:focus,
+.title a:active {
+  text-decoration: underline;
+  text-decoration-color: #84309c;
+}
+
+.title {
+  line-height: 1.15;
+  font-size: 4rem;
+}
+
+.title,
+.description {
+  text-align: left;
+}
+
+.connect {
+  margin-bottom: 2rem;
+}
+
+.description {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.code {
+  background: #555;
+  border-radius: 5px;
+  padding: 0.5em;
+  font-size: 1.1rem;
+}
+
+.grid {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background-color: #131313;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  max-width: 440px;
+  overflow: none;
+  border: none;
+}
+
+.cardText {
+  padding: 1rem;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px 4px 0 0;
+  margin-bottom: 12px;
+  border: none;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  background-color: #272c34;
+  opacity: 80%;
+}
+
+.card h2 {
+  margin: 0 0 0.75rem 0;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.logo {
+  height: 1em;
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .header {
+    margin-left: 0;
+  }
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+  .title {
+    font-size: 3rem;
+    line-height: 1.15;
+  }
+}
+
+.card,
+.footer {
+  border-color: #222;
+}
+.logo img {
+  filter: invert(1);
+}
+
+.swapCard {
+  width: 100%;
+  background: linear-gradient(145deg, #0a0a0a 0%, #050505 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
+              0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.swapCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.1) 50%, 
+    transparent 100%);
+  opacity: 0.5;
+}
+
+.swapInputContainer {
+  position: relative;
+  width: 100%;
+  background-color: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  transform: scale(1);
+}
+
+.swapInputContainer:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.swapInputContainer:has(.swapInput:focus) {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+}
+
+.swapInputContainer.activeInput {
+  transform: scale(1.05);
+  border-color: rgba(255, 255, 255, 0.25);
+  background-color: #0f0f0f;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5),
+              0 0 0 2px rgba(255, 255, 255, 0.1);
+  margin-bottom: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.swapInput {
+  position: relative;
+  background-color: transparent;
+  color: #ffffff;
+  width: 100%;
+  height: 120px;
+  font-size: 32px;
+  font-weight: 600;
+  border: none;
+  border-radius: 16px;
+  padding: 24px 180px 24px 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: "Inter", sans-serif;
+}
+
+.swapInputContainer.activeInput .swapInput {
+  height: 140px;
+  font-size: 36px;
+  padding: 28px 200px 28px 28px;
+}
+
+.swapInput::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 400;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.swapInput::-webkit-outer-spin-button,
+.swapInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.swapInput[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.swapInput:focus {
+  outline: none;
+}
+
+.swapInput:disabled {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: not-allowed;
+}
+
+.swapInput:not(:disabled):hover {
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+.maxButton {
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 6px 16px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.maxButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.maxButton:active {
+  transform: translateY(0);
+}
+
+.swapButton {
+  height: 56px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 16px;
+  padding: 0;
+  margin-top: 1rem;
+  background: linear-gradient(180deg, #ffffff 0%, #e5e5e5 100%);
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1),
+              0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  position: relative;
+  overflow: hidden;
+}
+
+.swapButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.3), 
+    transparent);
+  transition: left 0.5s ease;
+}
+
+.swapButton:hover:not(:disabled)::before {
+  left: 100%;
+}
+
+.swapButton:hover:not(:disabled) {
+  background: linear-gradient(180deg, #e5e5e5 0%, #ffffff 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255, 255, 255, 0.15),
+              0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+}
+
+.swapButton:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+.swapButton:disabled {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.3);
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.5;
+}
+
+.toggleButton {
+  height: 48px;
+  width: 48px;
+  font-size: 24px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  padding: 0;
+  background: linear-gradient(145deg, #0a0a0a 0%, #050505 100%);
+  color: #ffffff;
+  cursor: pointer;
+  margin: 0.5rem auto;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4),
+              0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+  position: relative;
+}
+
+.toggleButton::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.toggleButton:hover {
+  background: linear-gradient(145deg, #1a1a1a 0%, #0a0a0a 100%);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: rotate(180deg) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5),
+              0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+}
+
+.toggleButton:hover::before {
+  opacity: 1;
+}
+
+.toggleButton:active {
+  transform: rotate(180deg) scale(1.05);
+}
+
+.connectMessage {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 1.5rem;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingSpinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-top-color: #000000;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.swapInputsWrapper {
+  position: relative;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+  
+  .swapCard {
+    padding: 2rem;
+    border-radius: 20px;
+  }
+  
+  .swapInput {
+    font-size: 28px;
+    height: 100px;
+    padding: 20px 160px 20px 20px;
+  }
+  
+  .swapButton {
+    height: 52px;
+    font-size: 15px;
+  }
+  
+  .toggleButton {
+    width: 44px;
+    height: 44px;
+    margin: 0.5rem auto;
+    font-size: 20px;
+  }
+}
+
+.inputInfo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.swapInputContainer.activeInput .inputInfo {
+  top: 24px;
+  right: 24px;
+}
+
+.tokenInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.tokenSymbolContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tokenLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  padding: 4px;
+}
+
+.tokenLogoCircle {
+  width: 32px;
+  height: 32px;
+}
+
+.ethLogo {
+  width: 32px;
+  height: 32px;
+  background-color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2px;
+}
+
+.logoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.tokenSymbol {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+.tokenBalance {
+  font-size: 14px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+}
+
+.maxButton {
+  pointer-events: auto;
+}
+
+@media (max-width: 480px) {
+  .swapCard {
+    padding: 1.5rem;
+  }
+  
+  .swapInput {
+    font-size: 24px;
+    height: 90px;
+    padding: 16px 130px 16px 16px;
+  }
+  
+  .swapButton {
+    height: 48px;
+    font-size: 14px;
+  }
+  
+  .inputInfo {
+    top: 16px;
+    right: 16px;
+    gap: 6px;
+  }
+  
+  .tokenSymbol {
+    font-size: 13px;
+  }
+  
+  .tokenBalance {
+    font-size: 12px;
+  }
+}

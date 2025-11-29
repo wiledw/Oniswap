@@ -1,0 +1,95 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2.5rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: all 0.3s ease;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.logoContainer:hover {
+  transform: translateX(-2px);
+}
+
+.logoWrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.logoWrapper:hover {
+  transform: rotate(5deg) scale(1.05);
+}
+
+.logo {
+  filter: brightness(0) invert(1);
+  transition: all 0.3s ease;
+}
+
+.brandName {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.03em;
+  background: linear-gradient(180deg, #ffffff 0%, #e5e5e5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+
+.walletContainer {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+  
+  .brandName {
+    font-size: 1.5rem;
+  }
+  
+  .logoWrapper {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .logoContainer {
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brandName {
+    font-size: 1.25rem;
+  }
+  
+  .logoWrapper {
+    width: 36px;
+    height: 36px;
+  }
+}
+
